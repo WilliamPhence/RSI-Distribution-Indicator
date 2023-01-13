@@ -27,13 +27,6 @@ def calculate_rsi(
         # Change Indexing from dates to integers
         data = data.reset_index(names="Date")
 
-        # Get today's data
-        get_today(ticker)
-        # Read today's data into a dataframe
-        df = pd.read_pickle('C:\Python Projects\RSI Indicator\DATA\\todays close DATA.pkl')
-        # add today's data to the end of the data
-        data = pd.concat([data, df], ignore_index=False)
-
         # Convert Datetime formats
         data['Date'] = pd.to_datetime(data['Date'], utc=True)
 

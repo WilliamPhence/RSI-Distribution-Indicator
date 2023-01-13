@@ -5,10 +5,6 @@ import matplotlib.dates as mdates
 from datetime import date
 import pandas as pd
 
-import time
-start_time = time.time()
-
-
 # ask use to select from a menu of ETFs
 print("You can select from one of the following ETF's to plot the RSI Distribution indicator for:")
 print("SPY - S&P500")
@@ -95,11 +91,8 @@ def plot_rsi_indy(df):
    
     # Save the figures and show the plots    
     plt.savefig(f"C:\Python Projects\RSI Indicator\\figures\{etf} RSI Distributions.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
-    #plt.show()
-   
-    end_time = time.time()
-    run_time = end_time - start_time
-    print("RUN TIME: ", run_time)
+    plt.show()
+
 
 # show and save plot
 plot_rsi_indy(df)

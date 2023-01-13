@@ -24,15 +24,6 @@ def download_data(
     # move the date index into the dataframe as a column
     data = data.reset_index()
 
-    # Get today's data
-    get_today(symbols)
-
-    # Read today's data into a dataframe
-    df = pd.read_pickle('C:\Python Projects\RSI Indicator\DATA\\todays close DATA.pkl')
-    df = pd.DataFrame(df)
-    # add today's data to the end of the data
-    data = pd.concat([data, df], ignore_index=False)
-
     # Convert Datetime formats
     data['Date'] = pd.to_datetime(data['Date'], utc=True)
 

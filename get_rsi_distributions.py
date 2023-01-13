@@ -30,9 +30,6 @@ def get_rsi_dist(
     # create an empty list to store symbols with failed downloads
     failed_downloads = []
     
-    # Get the list of symbols for the components of the ETF chosen
-    get_symbol_list(etf)
-
     symbols = pd.read_pickle("C:\Python Projects\RSI Indicator\DATA\symbol list.pkl")
 
     # Run RSI function for each symbol
@@ -51,9 +48,6 @@ def get_rsi_dist(
             # try using the data frame
             data = pd.read_pickle(f"C:\Python Projects\RSI Indicator\DATA\{symbol} DATA.pkl")            
             # pass each new pkl file into a temporary data frame
-            print("DATA CHECK")
-            print(data)
-            print("DATA CHECK")
             data = pd.DataFrame(data)
 
             # Reduce data frame to only needed columns
@@ -68,6 +62,7 @@ def get_rsi_dist(
             
             # add the RSI test column to the main_df
             main_df = pd.merge(main_df, data, how='outer', on=['Date'])
+
         # Add an exception for when there are symbols on the list without available data
         except FileNotFoundError:
             failed_downloads.append(symbol)
