@@ -18,9 +18,8 @@ def calculate_rsi(
         yf.pdr_override()
 
         # Obtain data, show terminal output for each download attempt
-        print(f"Getting Data for {ticker}....")
+        print(f"Getting Yahoo Data for {ticker}....")
         data = pdr.get_data_yahoo(ticker, start_date, end_date)['Close']
-        
         # Take the data we just downloaded and put it into a pandas dataframe
         data = pd.DataFrame(data)
 
@@ -51,7 +50,7 @@ def calculate_rsi(
         data = data.dropna()
 
         # output a .pkl file
-        data.to_pickle(f"C:\Python Projects\\tests\outputs\{ticker} DATA.pkl")
+        data.to_pickle(f"C:\Python Projects\RSI Indicator\DATA\{ticker} DATA.pkl")
 
 
 

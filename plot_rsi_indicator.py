@@ -45,10 +45,6 @@ df = pd.read_pickle(f"C:\Python Projects\RSI Indicator\DATA\ 000_FINAL_DATA.pkl"
 df = pd.DataFrame(df)
 df.set_index('Date', inplace=True)
 
-# CONSOLE PRINT CHECK
-print("\nPlot function Input shown below:\n")
-print(df)
-
 # Declare Plot variables
 def plot_rsi_indy(df):
     # Declare figure and axes variables
@@ -89,6 +85,8 @@ def plot_rsi_indy(df):
     ax2.set_ylabel('%'+f' of {etf.upper()} Comp. w/ RSI > 50')
     ax1.set_xlabel('Dates (Month-Year)')
    
+    print(df)
+
     # Save the figures and show the plots    
     plt.savefig(f"C:\Python Projects\RSI Indicator\\figures\{etf} RSI Distributions.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
     plt.show()
