@@ -5,6 +5,10 @@ import yfinance as yf
 from get_todays_close import get_today
 from datetime import date
 
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+
 
 
 # This function downloads the historical data for a list of stocks

@@ -6,6 +6,10 @@ from datetime import date
 # custom functions
 from get_todays_close import get_today
 
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+
 
 
 def calculate_rsi(

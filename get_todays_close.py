@@ -3,6 +3,11 @@ import pandas as pd
 from datetime import datetime
 
 
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+
+
 def get_today(symbol):
 
     yf.pdr_override()

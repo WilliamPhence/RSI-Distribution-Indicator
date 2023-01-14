@@ -4,6 +4,10 @@ from RSI_function import calculate_rsi
 from download_data import download_data
 from get_symbols import get_symbol_list
 
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+
 
 
 # Grab data and run RSI test 

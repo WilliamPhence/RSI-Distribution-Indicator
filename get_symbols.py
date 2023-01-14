@@ -2,6 +2,11 @@ import pandas as pd
 import requests as req
 import csv
 
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+
+
 
 def get_symbol_list(etf):
     if etf == 'SPY':

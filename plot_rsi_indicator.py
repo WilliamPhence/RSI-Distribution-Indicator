@@ -5,6 +5,10 @@ import matplotlib.dates as mdates
 from datetime import date
 import pandas as pd
 
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
+
 
 # ask use to select from a menu of ETFs
 print("You can select from one of the following ETF's to plot the RSI Distribution indicator for:")
