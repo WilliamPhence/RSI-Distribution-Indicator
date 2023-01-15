@@ -93,7 +93,7 @@ def plot_rsi_indy(df):
     print(df)
 
     # Save the figures and show the plots    
-    plt.savefig(f"C:\Python Projects\RSI Indicator\\figures\{etf} RSI Distributions.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
+    plt.savefig(f"C:\Python Projects\RSI Indicator\\figures\{etf} RSI Distributions {start_date} - {end_date}.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
     plt.show()
 
     delete_temp_files(temp_data)
