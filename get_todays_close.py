@@ -2,12 +2,15 @@ import yfinance as yf
 import pandas as pd
 from datetime import datetime
 
+<<<<<<< HEAD
 
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 
 
+=======
+>>>>>>> main
 def get_today(symbol):
 
     yf.pdr_override()

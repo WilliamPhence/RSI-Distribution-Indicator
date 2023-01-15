@@ -2,12 +2,15 @@ import pandas as pd
 import requests as req
 import csv
 
+<<<<<<< HEAD
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 
 
 
+=======
+>>>>>>> main
 def get_symbol_list(etf):
     if etf == 'SPY':
         # Get the list of symbols for the components of the ETF chosen

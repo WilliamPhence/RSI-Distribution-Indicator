@@ -4,12 +4,15 @@ from RSI_function import calculate_rsi
 from download_data import download_data
 from get_symbols import get_symbol_list
 
+<<<<<<< HEAD
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 #THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 
 
 
+=======
+>>>>>>> main
 # Grab data and run RSI test 
 def get_rsi_dist(        
         start_date,

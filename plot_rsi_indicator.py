@@ -5,9 +5,12 @@ import matplotlib.dates as mdates
 from datetime import date
 import pandas as pd
 
+<<<<<<< HEAD
 #This is totally working nowww
 
 
+=======
+>>>>>>> main
 # ask use to select from a menu of ETFs
 print("You can select from one of the following ETF's to plot the RSI Distribution indicator for:")
 print("SPY - S&P500")
