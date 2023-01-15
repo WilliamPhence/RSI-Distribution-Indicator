@@ -2,6 +2,7 @@ import yfinance as yf
 import pandas as pd
 from datetime import datetime
 
+#This is currently not in production
 
 def get_today(symbol):
 
