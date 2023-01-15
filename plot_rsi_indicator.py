@@ -5,10 +5,7 @@ import matplotlib.dates as mdates
 from datetime import date
 import pandas as pd
 
-#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
-#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
-#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
-print("Hello is this working???")
+#This is totally working now
 
 
 # ask use to select from a menu of ETFs
