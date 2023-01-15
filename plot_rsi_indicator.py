@@ -5,7 +5,7 @@ import matplotlib.dates as mdates
 from datetime import date
 import pandas as pd
 
-#This is totally working now
+#This is totally working nowww
 
 
 # ask use to select from a menu of ETFs
