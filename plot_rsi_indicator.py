@@ -1,16 +1,15 @@
 # Import Libraries and functions
 from get_rsi_distributions import get_rsi_dist
+from delete_temp_files import delete_temp_files
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from datetime import date
 import pandas as pd
 
-<<<<<<< HEAD
-#This is totally working nowww
+# Declare path for the temp data to be deleted after plots are shown and saved
+temp_data = 'C:\Python Projects\RSI Indicator\DATA'
 
 
-=======
->>>>>>> main
 # ask use to select from a menu of ETFs
 print("You can select from one of the following ETF's to plot the RSI Distribution indicator for:")
 print("SPY - S&P500")
@@ -96,6 +95,8 @@ def plot_rsi_indy(df):
     # Save the figures and show the plots    
     plt.savefig(f"C:\Python Projects\RSI Indicator\\figures\{etf} RSI Distributions.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
     plt.show()
+
+    delete_temp_files(temp_data)
 
 
 # show and save plot

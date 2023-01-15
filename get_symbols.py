@@ -2,15 +2,7 @@ import pandas as pd
 import requests as req
 import csv
 
-<<<<<<< HEAD
-#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
-#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
-#THIS IS A TEST TO SEE IF GIT PUSH IS WORKING
 
-
-
-=======
->>>>>>> main
 def get_symbol_list(etf):
     if etf == 'SPY':
         # Get the list of symbols for the components of the ETF chosen
@@ -36,7 +28,7 @@ def get_symbol_list(etf):
     
     elif etf == 'IWM':
         # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\russell_2000.xlsx"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\russell_2000.xlsx"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_excel(file)
@@ -50,7 +42,7 @@ def get_symbol_list(etf):
     elif etf == "XLE":
 
         # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xle.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xle.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -63,7 +55,7 @@ def get_symbol_list(etf):
     
     elif etf == "XLY":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xly.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xly.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -76,7 +68,7 @@ def get_symbol_list(etf):
     
     elif etf == "XLP":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xlp.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xlp.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -89,7 +81,7 @@ def get_symbol_list(etf):
     
     elif etf == "XLV":
         # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xlv.CSV"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xlv.CSV"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -102,7 +94,7 @@ def get_symbol_list(etf):
     
     elif etf == "XLB":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xlb.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xlb.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -115,7 +107,7 @@ def get_symbol_list(etf):
     
     elif etf == "XLRE":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xlre.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xlre.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -128,7 +120,7 @@ def get_symbol_list(etf):
     
     elif etf == "XLK":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xlk.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xlk.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -141,7 +133,7 @@ def get_symbol_list(etf):
     
     elif etf == "XLU":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xlu.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xlu.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -154,7 +146,7 @@ def get_symbol_list(etf):
     
     elif etf == "XLC":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xlc.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xlc.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -167,7 +159,7 @@ def get_symbol_list(etf):
 
     elif etf == "XLI":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xli.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xli.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
@@ -180,7 +172,7 @@ def get_symbol_list(etf):
 
     elif etf == "XLF":
                 # Declare datafile location
-        file = "C:\Python Projects\RSI Indicator\DATA\STATIC DATA\\xlf.csv"
+        file = "C:\Python Projects\RSI Indicator\STATIC DATA\\xlf.csv"
 
         # Read the data file into a pandas dataframe
         symbols = pd.read_csv(file)
