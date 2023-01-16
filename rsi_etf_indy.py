@@ -56,7 +56,7 @@ def rsi_etf_indy():
     
     delete_temp_files(temp_data)
 
-loop = True   
+
 while True:
     rsi_etf_indy()
     repeat = input("Are you done? Y/N : ")
