@@ -17,7 +17,7 @@ def plot_rsi_indy(df, etf, start_date, end_date):
             )
     line_rsi_y, = ax2.plot(
             df['Y'], 
-            label='%'+' of SPY Components w/ RSI over 50',
+            label='%'+f' of {etf} Components w/ RSI over 50',
             c='red'
             )
 
@@ -38,7 +38,7 @@ def plot_rsi_indy(df, etf, start_date, end_date):
     # Format the axes
     ax1.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
     ax1.xaxis.set_major_formatter(mdates.DateFormatter('%b\n%Y'))
-    ax1.set_title(f'{etf.upper()} vs {etf.upper()} Components RSI Distribution')
+    ax1.set_title(f'{etf.upper()} vs {etf.upper()} Components RSI Distribution ({start_date}) to ({end_date})')
     ax1.set_ylabel(f"{etf.upper()}")
     ax2.set_ylabel('%'+f' of {etf.upper()} Comp. w/ RSI > 50')
     ax1.set_xlabel('Dates (Month-Year)')
