@@ -1,6 +1,11 @@
 # Import Libraries and functions
+from get_rsi_distributions import get_rsi_dist
+from delete_temp_files import delete_temp_files
+from plot_rsi_indicator11 import plot_rsi_indy
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+from datetime import date
+import pandas as pd
 
 
 # Declare Plot variables
@@ -48,3 +53,5 @@ def plot_rsi_indy(df, etf, start_date, end_date):
     # Save the figures and show the plots    
     plt.savefig(f"C:\Python Projects\RSI Indicator\\figures\{etf} RSI Distributions {start_date} - {end_date}.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
     plt.show()
+
+    delete_temp_files(temp_data)
