@@ -1,23 +1,24 @@
 import yfinance as yf
 import pandas as pd
+import pandas_datareader as pdr
 from datetime import datetime
 
 #This is currently not in production
+yf.pdr_override()
 
 def get_today(symbol):
 
-    yf.pdr_override()
-
-    # Get the stock information
     stock = yf.Ticker(symbol)
+    # Download the most recent trading data for the stock
+    data = stock.history(period="1d")
 
-    # Get the most recent daily close price
-    most_recent_close = stock.info['regularMarketPrice']
-    most_recent_close = int(most_recent_close)
+    # Get the most recent closing price
+    closing_price = data["Close"][-1]
     today = datetime.today().date()
 
     df = pd.DataFrame({
         'Date' : [today],
-        'Close': [most_recent_close],
+        'Close': [closing_price],
     })
-    df.to_pickle('C:\Python Projects\RSI Indicator\DATA\\todays close DATA.pkl')
+    print(df)
+    df.to_pickle('C:\Python Projects\SMA Indicator\DATA\\todays close DATA.pkl')
