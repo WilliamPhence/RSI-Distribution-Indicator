@@ -47,4 +47,3 @@ def plot_rsi_indy(df, etf, start_date, end_date):
 
     # Save the figures and show the plots    
     plt.savefig(f"C:\Python Projects\RSI Indicator\\figures\{etf} RSI Distributions {start_date} - {end_date}.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
-    plt.show()
