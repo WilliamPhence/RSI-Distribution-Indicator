@@ -4,7 +4,9 @@ from pandas_datareader import data as pdr
 import yfinance as yf
 from datetime import date
 # custom functions
+from get_todays_close import get_today
 
+#test
 
 def calculate_rsi(
         start_date,
