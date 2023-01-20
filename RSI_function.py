@@ -4,9 +4,6 @@ from pandas_datareader import data as pdr
 import yfinance as yf
 from datetime import date
 # custom functions
-from get_todays_close import get_today
-from gettodaytoday import gettodaytoday
-
 
 
 def calculate_rsi(
@@ -30,13 +27,6 @@ def calculate_rsi(
 
         # Convert Datetime formats
         data['Date'] = pd.to_datetime(data['Date'], utc=True)
-
-        gettodaytoday(ticker)
-        todays_close = pd.read_pickle('C:\Python Projects\SMA Indicator\DATA\\todays close DATA.pkl')
-        print(todays_close)
-        data = pd.concat([data, todays_close], axis=0)
-        print (data)
-        
 
         # Calculate Gain
         Delta = data['Close'].diff()

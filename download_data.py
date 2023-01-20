@@ -2,7 +2,6 @@
 import pandas as pd
 from pandas_datareader import data as pdr
 import yfinance as yf
-from get_todays_close import get_today
 from datetime import date
 
 
