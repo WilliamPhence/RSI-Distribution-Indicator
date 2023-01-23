@@ -12,14 +12,11 @@ def get_rsi_dist(
         etf,
     ):
     # Grab user selected ETF data
-    download_data(        
+    main_df = download_data(        
         start_date,
         end_date,
         etf,
     )
-
-    # put data into main_df
-    main_df = pd.read_pickle(f"C:\Python Projects\RSI Indicator\DATA\{etf} DATA.pkl")
     main_df = pd.DataFrame(main_df)
 
     # Change Indexing from dates to integers
@@ -41,7 +38,7 @@ def get_rsi_dist(
 
         # Download data for all symbols and see if RSI is over 50 or not
         # This function also creates a csv file for each symbol that is used in the try block below
-        calculate_rsi(
+        data = calculate_rsi(
                 start_date,
                 end_date, 
                 symbol
@@ -49,13 +46,11 @@ def get_rsi_dist(
 
         # Add each Symbol's RSI_test results to a main data frame that contains SPY & Date Data
         try: 
-            # try using the data frame
-            data = pd.read_pickle(f"C:\Python Projects\RSI Indicator\DATA\{symbol} DATA.pkl")            
-            # pass each new pkl file into a temporary data frame
+            # pass each new dataframe into a temporary data frame
             data = pd.DataFrame(data)
 
             # Reduce data frame to only needed columns
-            data = data[['Date','RSI_test']].copy()
+            data = data[['Date','RSI_test']]
 
             # Convert Datetime format
             data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date
@@ -68,7 +63,7 @@ def get_rsi_dist(
             main_df = pd.merge(main_df, data, how='outer', on=['Date'])
 
         # Add an exception for when there are symbols on the list without available data
-        except FileNotFoundError:
+        except KeyError:
             failed_downloads.append(symbol)
             print(f"No data for {symbol}")
 
@@ -90,6 +85,6 @@ def get_rsi_dist(
             print(name)
     else:
         print("No Failed Downloads\n")
-
-    # print main_df to pkl
-    main_df.to_pickle(f"C:\Python Projects\RSI Indicator\DATA\ 000_FINAL_DATA.pkl")
+    
+    main_df.dropna(inplace=True)
+    return main_df

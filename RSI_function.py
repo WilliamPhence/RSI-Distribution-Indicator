@@ -49,8 +49,7 @@ def calculate_rsi(
         # Remove Rows without RSI value
         data = data.dropna()
 
-        # output a .pkl file
-        data.to_pickle(f"C:\Python Projects\RSI Indicator\DATA\{ticker} DATA.pkl")
+        return data
 
 
 

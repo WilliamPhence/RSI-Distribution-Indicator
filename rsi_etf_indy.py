@@ -19,7 +19,8 @@ def rsi_etf_indy():
     print("\tIWM - RUSSELL 2000")
     print("\tXLY - CONSUMER DISCRETIONARY")
     print("\tXLP - CONSUMER STAPLES")
-    print("\tXLY - FINANCIALS")
+    print("\tXLE - ENERGY")
+    print("\tXLF - FINANCIALS")
     print("\tXLV - INDUSTRIALS")
     print("\tXLB - MATERIALS")
     print("\tXLRE - REAL ESTATE")
@@ -40,16 +41,14 @@ def rsi_etf_indy():
 
 
     # call get_rsi_dist function and pass through user inputs
-    get_rsi_dist(
+    data = get_rsi_dist(
             start_date,
             end_date,
             etf.upper(),
     )
 
     # Declare datasource
-    df = pd.read_pickle(f"C:\Python Projects\RSI Indicator\DATA\ 000_FINAL_DATA.pkl") 
-    # Set datasource as a dataframe and set date column as the index
-    df = pd.DataFrame(df)
+    df = pd.DataFrame(data)
     df.set_index('Date', inplace=True)
 
     plot_rsi_indy(df, etf, start_date, end_date)
