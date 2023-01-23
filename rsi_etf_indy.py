@@ -46,11 +46,8 @@ def rsi_etf_indy():
             end_date,
             etf.upper(),
     )
-    
 
     # Declare datasource
-    # df = pd.read_pickle(data) 
-    # Set datasource as a dataframe and set date column as the index
     df = pd.DataFrame(data)
     df.set_index('Date', inplace=True)
 
