@@ -27,7 +27,7 @@ def calculate_rsi(
         data = data.reset_index(names="Date")
 
         # Convert Datetime formats
-        data['Date'] = pd.to_datetime(data['Date'], utc=True)
+        data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date
 
         # Calculate Gain
         Delta = data['Close'].diff()
@@ -40,7 +40,7 @@ def calculate_rsi(
         # Calculate the relative strength
         rs = sma_up / sma_down
         # Calculate RSI
-        rsi = 100 - (100/(1 + rs))
+        rsi = 100 - ( 100 / ( 1 + rs ))
     
         # Create a column that tells us if RSI is > 50 or not
         data.loc[rsi <= 50, 'RSI_test'] = 'N'

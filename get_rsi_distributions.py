@@ -21,9 +21,6 @@ def get_rsi_dist(
 
     # Change Indexing from dates to integers
     main_df = main_df.reset_index(names="Date")
-    
-    # Convert Datetime format
-    main_df['Date'] = pd.to_datetime(main_df['Date'], utc=True).dt.date
 
     # create an empty list to store symbols with failed downloads
     failed_downloads = []
@@ -51,9 +48,6 @@ def get_rsi_dist(
 
             # Reduce data frame to only needed columns
             data = data[['Date','RSI_test']]
-
-            # Convert Datetime format
-            data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date
 
             # Rename Column headers
             new_name = f"{symbol}_rsi_test"

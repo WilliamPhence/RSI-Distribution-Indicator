@@ -25,7 +25,7 @@ def download_data(
     data = data.reset_index()
 
     # Convert Datetime formats
-    data['Date'] = pd.to_datetime(data['Date'], utc=True)
+    data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date
 
     # make the date column the index
     data.index = data['Date']
