@@ -90,6 +90,9 @@ def get_rsi_dist(
             print(name)
     else:
         print("No Failed Downloads\n")
-
+    
+    main_df.dropna(inplace=True)
     # print main_df to pkl
     main_df.to_pickle(f"C:\Python Projects\RSI Indicator\DATA\ 000_FINAL_DATA.pkl")
+    
+    return main_df
