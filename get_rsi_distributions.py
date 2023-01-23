@@ -12,14 +12,11 @@ def get_rsi_dist(
         etf,
     ):
     # Grab user selected ETF data
-    download_data(        
+    main_df = download_data(        
         start_date,
         end_date,
         etf,
     )
-
-    # put data into main_df
-    main_df = pd.read_pickle(f"C:\Python Projects\RSI Indicator\DATA\{etf} DATA.pkl")
     main_df = pd.DataFrame(main_df)
 
     # Change Indexing from dates to integers
