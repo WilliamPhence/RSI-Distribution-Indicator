@@ -7,7 +7,7 @@ def get_symbol_list(etf):
     if etf == 'SPY':
         # Get the list of symbols for the components of the ETF chosen
         symbols = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')[0]['Symbol'].tolist()
-        return symbols
+        return sorted(symbols)
     
     elif etf == 'QQQ':
         # Send a request to the URL
@@ -26,7 +26,7 @@ def get_symbol_list(etf):
         symbols = pd.DataFrame(symbols)
 
         symbols = symbols['Holding Ticker'].copy()
-        return symbols
+        return sorted(symbols)
     
     elif etf == 'IWM':
         # Declare datafile location
@@ -39,7 +39,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
     
     elif etf == "XLE":
 
@@ -53,7 +53,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
     
     elif etf == "XLY":
                 # Declare datafile location
@@ -66,7 +66,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
     
     elif etf == "XLP":
                 # Declare datafile location
@@ -79,7 +79,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
     
     elif etf == "XLV":
         # Declare datafile location
@@ -92,7 +92,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
     
     elif etf == "XLB":
                 # Declare datafile location
@@ -105,7 +105,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
     
     elif etf == "XLRE":
                 # Declare datafile location
@@ -118,7 +118,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols 
+        return sorted(symbols) 
     
     elif etf == "XLK":
                 # Declare datafile location
@@ -131,7 +131,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
     
     elif etf == "XLU":
                 # Declare datafile location
@@ -144,7 +144,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols 
+        return sorted(symbols) 
     
     elif etf == "XLC":
                 # Declare datafile location
@@ -157,7 +157,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
 
     elif etf == "XLI":
                 # Declare datafile location
@@ -170,7 +170,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
 
     elif etf == "XLF":
                 # Declare datafile location
@@ -183,16 +183,7 @@ def get_symbol_list(etf):
         symbols = symbols['Ticker'].copy()
 
         # return symbol list
-        return symbols
+        return sorted(symbols)
     
     else:
         print("Not an acceptable input, try again")
-       
-  
-    # sort list alphabetically
-    symbols = sorted(symbols)
-    # convert list to pandas series
-    symbols = pd.Series(symbols)
-
-    # return symbol list
-    return symbols

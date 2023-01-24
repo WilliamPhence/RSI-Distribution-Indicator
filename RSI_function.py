@@ -4,6 +4,7 @@ from pandas_datareader import data as pdr
 import yfinance as yf
 from datetime import date
 # custom functions
+from gettodayyyy import get_today
 
 #test
 
@@ -25,6 +26,9 @@ def calculate_rsi(
 
         # Change Indexing from dates to integers
         data = data.reset_index(names="Date")
+
+        today = get_today(ticker)
+        data = pd.concat([data, today], ignore_index=True)
 
         # Convert Datetime formats
         data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date

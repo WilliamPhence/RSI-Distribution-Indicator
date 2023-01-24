@@ -11,6 +11,9 @@ def get_today(symbol):
     # Get the stock information
     stock = yf.Ticker(symbol)
 
+    stock.info.items()
+
+    
     # Get the most recent daily close price
     most_recent_close = stock.info['regularMarketPrice']
     most_recent_close = int(most_recent_close)
@@ -21,3 +24,7 @@ def get_today(symbol):
         'Close': [most_recent_close],
     })
     df.to_pickle('C:\Python Projects\RSI Indicator\DATA\\todays close DATA.pkl')
+    print(df)
+    return df
+
+get_today("SPY")

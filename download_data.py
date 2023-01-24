@@ -4,21 +4,23 @@ from pandas_datareader import data as pdr
 import yfinance as yf
 from datetime import date
 
+from gettodayyyy import get_today
+
 
 
 # This function downloads the historical data for a list of stocks
 def download_data(
         start_date,
         end_date,
-        symbols,
+        symbol,
     ):
 
     # Apply yf override function
     yf.pdr_override()
 
     # use pdr function to gert data from yahoo
-    print(f"Getting DATA for {symbols}...")
-    data = pdr.get_data_yahoo(symbols, start_date, end_date)['Close']
+    print(f"Getting DATA for {symbol}...")
+    data = pdr.get_data_yahoo(symbol, start_date, end_date)['Close']
     data = pd.DataFrame(data)
 
     # move the date index into the dataframe as a column
@@ -27,12 +29,15 @@ def download_data(
     # Convert Datetime formats
     data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date
 
+    today = get_today(symbol)
+    data = pd.concat([data, today], ignore_index=True)
+
     # make the date column the index
     data.index = data['Date']
     data = data[['Close']].copy()
 
     # Rename close column header
-    new_name = f"{symbols}_Close"
+    new_name = f"{symbol}_Close"
     data.rename(columns={'Close':new_name}, inplace=True)
    
     # return final dataframe
