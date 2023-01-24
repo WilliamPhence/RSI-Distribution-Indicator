@@ -1,7 +1,6 @@
 # Import Libraries and functions
 from get_rsi_distributions import get_rsi_dist
 from plot_rsi_indicator import plot_rsi_indy
-from delete_temp_files import delete_temp_files
 from datetime import date
 import pandas as pd
 
@@ -52,8 +51,6 @@ def rsi_etf_indy():
     df.set_index('Date', inplace=True)
 
     plot_rsi_indy(df, etf, start_date, end_date)
-    
-    delete_temp_files(temp_data)
 
 
 while True:

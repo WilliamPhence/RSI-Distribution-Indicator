@@ -26,9 +26,7 @@ def get_rsi_dist(
     failed_downloads = []
 
     # Get the list of symbols for the components of the ETF chosen
-    get_symbol_list(etf)
-    
-    symbols = pd.read_pickle("C:\Python Projects\RSI Indicator\DATA\symbol list.pkl")
+    symbols = get_symbol_list(etf)
 
     # Run RSI function for each symbol
     for symbol in symbols:
