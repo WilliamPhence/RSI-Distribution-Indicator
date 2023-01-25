@@ -6,11 +6,14 @@ from datetime import date
 
 def get_today(ticker):
 
-    ticker_yahoo = yf.Ticker(ticker)
-    data = ticker_yahoo.history()
+    try:
+        ticker_yahoo = yf.Ticker(ticker)
+        data = ticker_yahoo.history()
 
-    last_quote = data['Close'].iloc[1]
-    today = date.today()
+        last_quote = data['Close'].iloc[-1]
+        today = date.today()
 
-    df = pd.DataFrame({'Date':[today], 'Close':[last_quote]})
-    return df
+        df = pd.DataFrame({'Date':[today], 'Close':[last_quote]})
+        return df
+    except IndexError:
+        print(f"Failed to download today's {ticker} DATA")

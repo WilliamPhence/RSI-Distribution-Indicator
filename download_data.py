@@ -2,7 +2,8 @@
 import pandas as pd
 from pandas_datareader import data as pdr
 import yfinance as yf
-from datetime import date
+from datetime import datetime
+import datetime
 
 from gettodayyyy import get_today
 
@@ -14,6 +15,8 @@ def download_data(
         end_date,
         symbol,
     ):
+
+
 
     # Apply yf override function
     yf.pdr_override()
@@ -29,8 +32,15 @@ def download_data(
     # Convert Datetime formats
     data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date
 
-    today = get_today(symbol)
-    data = pd.concat([data, today], ignore_index=True)
+    # Get today's date and time to see if we need to get today's data
+    now = datetime.datetime.now()
+    weekday = now.weekday()
+    hour = now.hour
+    if weekday >= 1 and weekday <= 4:
+        if hour >= 17:
+            today = get_today(symbol)
+            data = pd.concat([data, today], ignore_index=True)
+            pass
 
     # make the date column the index
     data.index = data['Date']
@@ -39,6 +49,6 @@ def download_data(
     # Rename close column header
     new_name = f"{symbol}_Close"
     data.rename(columns={'Close':new_name}, inplace=True)
-   
+
     # return final dataframe
     return data
