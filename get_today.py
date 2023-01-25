@@ -2,8 +2,7 @@ import yfinance as yf
 import pandas as pd
 from datetime import date
 
-#This is currently not in production
-
+# this function gets the closing price of today
 def get_today(ticker):
 
     try:

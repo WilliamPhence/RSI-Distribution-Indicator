@@ -4,9 +4,7 @@ from pandas_datareader import data as pdr
 import yfinance as yf
 from datetime import datetime
 import datetime
-
-from gettodayyyy import get_today
-
+from get_today import get_today
 
 
 # This function downloads the historical data for a list of stocks
@@ -15,8 +13,6 @@ def download_data(
         end_date,
         symbol,
     ):
-
-
 
     # Apply yf override function
     yf.pdr_override()

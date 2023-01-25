@@ -5,7 +5,6 @@ from datetime import date
 import pandas as pd
 
 
-
 def rsi_etf_indy():
 
     # Declare path for the temp data to be deleted after plots are shown and saved
@@ -37,7 +36,6 @@ def rsi_etf_indy():
         end_date = date.today()
     else:
         end_date = end_date
-
 
     # call get_rsi_dist function and pass through user inputs
     data = get_rsi_dist(

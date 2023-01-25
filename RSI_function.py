@@ -4,7 +4,7 @@ from pandas_datareader import data as pdr
 import yfinance as yf
 import datetime
 # custom functions
-from gettodayyyy import get_today
+from get_today import get_today
 
 
 def calculate_rsi(

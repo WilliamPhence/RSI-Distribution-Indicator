@@ -2,7 +2,6 @@ import pandas as pd
 import requests as req
 import csv
 
-
 def get_symbol_list(etf):
     if etf == 'SPY':
         # Get the list of symbols for the components of the ETF chosen

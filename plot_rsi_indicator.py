@@ -48,8 +48,7 @@ def plot_rsi_indy(df, etf, start_date, end_date):
     ax2.set_ylabel('%'+f' of {etf.upper()} Comp. w/ RSI > 50')
     ax1.set_xlabel('Dates (Month-Year)')
 
-    print(df)
-
+    print(f"\nTHIS IS WHAT WE PLOTTED : \n{df}")
 
     # Save the figures and show the plots    
     plt.savefig(f"C:\\Users\dvjkr\Pictures\charts\{etf} RSI Distributions {first_date} - {end_date}.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
