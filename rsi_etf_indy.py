@@ -7,8 +7,6 @@ import pandas as pd
 
 def rsi_etf_indy():
 
-    # Declare path for the temp data to be deleted after plots are shown and saved
-    temp_data = 'C:\Python Projects\RSI Indicator\DATA'
 
     # ask use to select from a menu of ETFs
     print("You can select from one of the following ETF's to plot the RSI Distribution indicator for:")
@@ -48,7 +46,7 @@ def rsi_etf_indy():
     df = pd.DataFrame(data)
     df.set_index('Date', inplace=True)
 
-    plot_rsi_indy(df, etf, start_date, end_date)
+    plot_rsi_indy(df, etf)
 
 
 while True:

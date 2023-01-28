@@ -5,10 +5,11 @@ import pandas as pd
 
 
 # Declare Plot variables
-def plot_rsi_indy(df, etf, start_date, end_date):
+def plot_rsi_indy(df, etf):
 
     df = pd.DataFrame(df)
     first_date = df.index[0]
+    last_date = df.index[-1]
 
     # Declare figure and axes variables
     fig, ax1 = plt.subplots()
@@ -43,7 +44,7 @@ def plot_rsi_indy(df, etf, start_date, end_date):
     # Format the axes
     ax1.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
     ax1.xaxis.set_major_formatter(mdates.DateFormatter('%b\n%Y'))
-    ax1.set_title(f'{etf.upper()} vs {etf.upper()} Components RSI Distribution ({first_date}) to ({end_date})')
+    ax1.set_title(f'{etf.upper()} vs {etf.upper()} Components RSI Distribution ({first_date}) to ({last_date})')
     ax1.set_ylabel(f"{etf.upper()}")
     ax2.set_ylabel('%'+f' of {etf.upper()} Comp. w/ RSI > 50')
     ax1.set_xlabel('Dates (Month-Year)')
@@ -51,4 +52,4 @@ def plot_rsi_indy(df, etf, start_date, end_date):
     print(f"\nTHIS IS WHAT WE PLOTTED : \n{df}")
 
     # Save the figures and show the plots    
-    plt.savefig(f"C:\\Users\dvjkr\Pictures\charts\{etf} RSI Distributions {first_date} - {end_date}.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)
+    plt.savefig(f"C:\\Users\dvjkr\Pictures\charts\{etf} RSI Distributions {first_date} - {last_date}.png", dpi=1000, bbox_inches='tight', pad_inches=0.5)

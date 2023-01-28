@@ -25,6 +25,10 @@ def calculate_rsi(
 
         # Change Indexing from dates to integers
         data = data.reset_index(names="Date")
+        
+        # Convert Datetime formats
+        data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date
+
 
         # Get today's date and time to see if we need to get today's data
         now = datetime.datetime.now()
@@ -36,8 +40,6 @@ def calculate_rsi(
                 data = pd.concat([data, today], ignore_index=True)
                 pass
 
-        # Convert Datetime formats
-        data['Date'] = pd.to_datetime(data['Date'], utc=True).dt.date
 
         # Calculate Gain
         Delta = data['Close'].diff()

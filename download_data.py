@@ -40,7 +40,7 @@ def download_data(
 
     # make the date column the index
     data.index = data['Date']
-    data = data[['Close']].copy()
+    data = data[['Close']]
 
     # Rename close column header
     new_name = f"{symbol}_Close"
