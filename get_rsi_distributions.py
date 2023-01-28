@@ -18,25 +18,25 @@ def get_rsi_dist(
         etf,
     )
     main_df = pd.DataFrame(main_df)
-
-    # Change Indexing from dates to integers
-    main_df = main_df.reset_index(names="Date")
+    # Rename close column in main
+    new_name = f"{etf}_Close"
+    main_df.rename(columns={'Close':new_name}, inplace=True)   
 
     # create an empty list to store symbols with failed downloads
     failed_downloads = []
 
     # Get the list of symbols for the components of the ETF chosen
     symbols = get_symbol_list(etf)
+    # format string list to have no extra spaces
     symbols = [symbol.rstrip() for symbol in symbols]    
     symbol_count = int(len(symbols)) 
-    i = 0
+
     # Run RSI function for each symbol
-    for symbol in symbols:
+    for i, symbol in enumerate(symbols):
         
-        i = i + 1
-        print(f"Request {i} of {symbol_count} for {symbol}....")
+        print(f"Request {i + 1} of {symbol_count} for {symbol}...")
         # Download data for all symbols and see if RSI is over 50 or not
-        # This function also creates a csv file for each symbol that is used in the try block below
+        # This function also creates a dataframe for each symbol that is used in the try block below
         data = calculate_rsi(
                 start_date,
                 end_date, 
@@ -54,7 +54,7 @@ def get_rsi_dist(
             # Rename Column headers
             new_name = f"{symbol}_rsi_test"
             data.rename(columns= {'RSI_test':new_name}, inplace = True)
-            
+        
             # add the RSI test column to the main_df
             main_df = pd.merge(main_df, data, how='outer', on=['Date'])
 
@@ -72,7 +72,7 @@ def get_rsi_dist(
 
     # Remove RSI_test columns
     close_col = f'{etf}_Close'
-    main_df = main_df[['Date', close_col, 'Y', 'N']].copy()
+    main_df = main_df[['Date', close_col, 'Y', 'N']]
 
     # print a list of failed downloads
     if failed_downloads:
